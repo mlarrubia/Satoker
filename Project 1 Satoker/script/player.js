@@ -6,13 +6,39 @@ class Player{
         this.money = 0;
     }
 
+    newHand(){
+        this.hand.push(playingDeck.dealCard());
+        this.hand.push(playingDeck.dealCard());
+    }
+
+    strategicDecision(){
+        // Create Probablility for fold, check, call, raise, allin 
+        // if(){
+
+        // }
+        // else if(){
+
+        // }
+    }
     
+    fold(){
+        this.hand = [];
+    }
 
+    check(){
 
+    }
 
+    call(){
 
+    }
 
-    
+    raise(){
 
+    }
+
+    showDown(){
+        // Reveal cards
+    }
 
 }
