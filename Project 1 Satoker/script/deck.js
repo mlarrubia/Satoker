@@ -1,3 +1,4 @@
+console.log("Deck loaded");
 class Deck{
     constructor(){
         // this.deck =[
@@ -11,6 +12,12 @@ class Deck{
         this.deckShuffled = [];
         this.RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
         this.SUITS = ["Mcafee", "CZ", "Vitalik", "Justin Sun"];
+        
+        this.testDeck = [
+                'images/small1.png',
+                'images/small2.png',
+                'images/small3.png',            
+        ];
        
     }
 
@@ -26,6 +33,14 @@ class Deck{
     dealCard(){
         let randIndex = Math.floor(Math.random() * this.deckShuffled.length);
         return this.deckShuffled.splice(randIndex, 1);
+    }
+
+    // To delete
+    testShuffle(){
+        let randIndex = Math.floor(Math.random() * this.testDeck.length);
+        // console.log(randIndex);
+        // console.log(playingDeck.testDeck[randIndex])
+        return playingDeck.testDeck[randIndex];
     }
 
     collectHands(){

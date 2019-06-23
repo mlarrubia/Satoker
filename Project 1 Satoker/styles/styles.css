@@ -4,8 +4,26 @@ body{
 }
 
 #board{
+    display: flex;
     height: 600px;
     width: 1000px; 
-    background-color: red;
+    background-color: green;
     margin: 200px;
+}
+
+#communityCards{
+    /* Why do i have to use margin auto? Cant flex box take care of this for me? */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.communityCardSize{}
+
+.flop{
+     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
 }

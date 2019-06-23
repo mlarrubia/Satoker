@@ -4,15 +4,33 @@
         <meta charset="UTF-8">
         <title>Satoker</title>
         <link rel="stylesheet" href="styles/styles.css">
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
         <script src="script/currency.js"></script>
         <script src="script/deck.js"></script>
         <script src="script/player.js"></script>
         <script src="script/game.js"></script>
         <script src="script/main.js"></script>
+        <!-- <script src="script/houseRules.js"></script> -->
+       
     </head>
 
     <body>
+        <!-- cc === community card -->
         <section id="board">
+            
+            <section id="communityCards">
+                <div>
+                    <span class="communityCardSize flop" id="cc1"><img src="images/small1.png" alt=""></span>
+                    <span class="communityCardSize flop" id="cc2"><img src="images/small2.png" alt=""></span>
+                    <span class="communityCardSize flop" id="cc3"><img src="images/small3.png" alt=""></span>
+                </div>
+                <span class="communityCardSize" id="turn cc4"><img src="images/small2.png" alt=""></span>
+                <span class="communityCardSize" id="river cc5"><img src="images/small3.png" alt=""></span>
+            </section>
 
         </section>
     </body>
