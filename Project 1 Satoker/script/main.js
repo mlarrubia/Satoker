@@ -7,19 +7,26 @@ let rules;
 
 console.log("WORKS :)");
 // rules = new HouseRules();
+
+
+$("#start").click(function(){
+    console.log("Clicked")
+    alert("The paragraph was clicked.");
+  }); 
+
 currentGame = new Game();
 playingDeck = new Deck();   
 player1 = new Player();
+player2 = new Player();
+player3 = new Player();
+currentGame.players.push(player1);
+currentGame.players.push(player2);
+currentGame.players.push(player3);
 
-playingDeck.shuffleDeck();
-// player1.newHand();
+// Wasnt loading so i had to set a timeout function
+setTimeout(function(){ currentGame.generatePlayersHand(); }, 1000);
 
-// Flop
-currentGame.flop();
-console.log("Changing cards");   
-// $('#cc1').html(currentGame.communityCards[0]);
-// $('#cc2').html(currentGame.communityCards[1]);
-// $('#cc3').html(currentGame.communityCards[2]);
+
 
 // Shuffle Deck
 

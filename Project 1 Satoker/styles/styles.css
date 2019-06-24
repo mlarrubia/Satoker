@@ -1,29 +1,121 @@
+
+
+
+
+
+
+
 body{
     margin: 0;
     width: 0;
+    background-image: url('../images/background.jpg');  
+}
+
+#screen{
+    height: 100vh;
+    width: 100vw; 
+    
 }
 
 #board{
-    display: flex;
-    height: 600px;
-    width: 1000px; 
-    background-color: green;
-    margin: 200px;
+    height: 85vh;
+    width: 85vw;  
+    margin: 50px;   
+}
+
+.title{
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 #communityCards{
     /* Why do i have to use margin auto? Cant flex box take care of this for me? */
-    width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
 }
 
 .communityCardSize{}
 
-.flop{
-     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
+
+.flop-row {
+
 }
+
+
+#players{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 200px;
+}
+
+.playerHeader{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    color: white;
+}
+
+
+.playerHand{
+    height: 100px;
+  }
+  
+  .playerHand > img{
+      height: 150px;
+  }
+  
+  .playerName{
+     
+  }
+
+
+  #commandCenter{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: 50px;
+      padding-top: 30px;
+  }
+
+  .commandButton{
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

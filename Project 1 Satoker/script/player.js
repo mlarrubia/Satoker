@@ -12,13 +12,7 @@ class Player{
     }
 
     strategicDecision(){
-        // Create Probablility for fold, check, call, raise, allin 
-        // if(){
-
-        // }
-        // else if(){
-
-        // }
+       
     }
     
     fold(){
