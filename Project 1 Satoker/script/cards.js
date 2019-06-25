@@ -57,25 +57,25 @@ let cards = [
     {
       suit: "cz",
       name: "jack",
-      value: 10,
+      value: 11,
       image: "assets/small/czj.png"
     },
     {
       suit: "cz",
       name: "queen",
-      value: 10,
+      value: 12,
       image: "assets/small/czq.png"
     },
     {
       suit: "cz",
       name: "king",
-      value: 10,
+      value: 13,
       image: "assets/small/czk.png"
     },
     {
       suit: "cz",
       name: "ace",
-      value: 11,
+      value: 14,
       image: "assets/small/cza.png"
     },
     {
@@ -135,25 +135,25 @@ let cards = [
     {
       suit: "sun",
       name: "jack",
-      value: 10,
+      value: 11,
       image: "assets/small/sunj.png"
     },
     {
       suit: "sun",
       name: "queen",
-      value: 10,
+      value: 12,
       image: "assets/small/sunq.png"
     },
     {
       suit: "sun",
       name: "king",
-      value: 10,
+      value: 13,
       image: "assets/small/sunk.png"
     },
     {
       suit: "sun",
       name: "ace",
-      value: 11,
+      value: 14,
       image: "assets/small/suna.png"
     },
     {
@@ -213,25 +213,25 @@ let cards = [
     {
       suit: "mcafee",
       name: "jack",
-      value: 10,
+      value: 11,
       image: "assets/small/mcafeej.png"
     },
     {
       suit: "mcafee",
       name: "queen",
-      value: 10,
+      value: 12,
       image: "assets/small/mcafeeq.png"
     },
     {
       suit: "mcafee",
       name: "king",
-      value: 10,
+      value: 13,
       image: "assets/small/mcafeek.png"
     },
     {
       suit: "mcafee",
       name: "ace",
-      value: 11,
+      value: 14,
       image: "assets/small/mcafeea.png"
     },
     {
@@ -291,25 +291,25 @@ let cards = [
     {
       suit: "vitalik",
       name: "jack",
-      value: 10,
+      value: 11,
       image: "assets/small/vitalikj.png"
     },
     {
       suit: "vitalik",
       name: "queen",
-      value: 10,
+      value: 12,
       image: "assets/small/vitalikq.png"
     },
     {
       suit: "vitalik",
       name: "king",
-      value: 10,
+      value: 13,
       image: "assets/small/vitalikk.png"
     },
     {
       suit: "vitalik",
       name: "ace",
-      value: 11,
+      value: 14,
       image: "assets/small/vitalika.png"
     }
   ];

@@ -1,4 +1,3 @@
-console.log("Game loaded");
 class Game{
     constructor(){
         this.players = [];
@@ -18,7 +17,6 @@ class Game{
 
 
     generatePlayersHand(){
-        console.log("Generatign players hand...")
         this.emptyHands();
         this.shuffleDeck();
         
@@ -48,15 +46,9 @@ class Game{
     }
 
     // Debating wheather to place this method in houserules or game but i think its part of the game that will check the houserules    
-    checkHand(player){
-        
-        if(currentGame.royalFlush()){
-            console.log("works");
-        }
-    }
+   
 
     flop(){
-        console.log("---------------------- ", currentGame.communityCards)
         currentGame.communityCards[0] = (playingDeck.deckShuffled.shift());
         currentGame.communityCards[1] = (playingDeck.deckShuffled.shift());
         currentGame.communityCards[2] = (playingDeck.deckShuffled.shift());
@@ -66,21 +58,17 @@ class Game{
     
     
     theTurn(){
-        console.log("===================== ", currentGame.communityCards)
         currentGame.communityCards[3] = (playingDeck.deckShuffled.shift());
         this.appendAll()
     }
     
     theRiver(){
-        console.log(">>>>>>>>>>>>>>>>>>> ", currentGame.communityCards)
         currentGame.communityCards[4] = (playingDeck.deckShuffled.shift());
         this.appendAll()
     }
 
     appendAll(){
         currentGame.communityCards.forEach((oneCard, i) => {
-            console.log("<><><><<><><><><>><><>><><>><   ",$(`#cc${i+1}`));
-            console.log("<><><><<><><><><>><><>><><>><   ",$(`#cc${i+1}`)[0].childNodes[0]);
             $(`#cc${i+1}`)[0].childNodes[0].src = `${oneCard.image}`;
             // $(`#cc${i+1}`).append('<img src="' + oneCard.image + '" alt="">');
             // $(`#cc${i+1}`)[0].childNodes[0].removeAttr('src').replaceWith('<img src="' + oneCard.image + '" alt="">');
@@ -98,4 +86,46 @@ class Game{
     distributeWinningPot(){
 
     }
+
+
+
+
+    // Checking the logic
+    checkHand(){
+        let temp = undefined;
+        
+        if(temp === undefined){
+            console.log("Two Pairs...");
+            temp = rules.twoPairs(player1);
+        }
+        console.log(temp);
+        if(temp === undefined){
+            console.log("One Pair...")
+            temp = rules.onePair(player1);    
+        }
+        console.log(temp);
+        if(temp === undefined){
+            console.log("High Card");
+            temp = rules.highCard(player1);
+        }
+        console.log(temp);
+        switch(temp.title){
+            case "Two Pairs":
+                console.log("Setting the Two Pairs");
+                // console.log(temp);
+                player1.highhand = temp;
+                break;
+            case "One Pair":
+                console.log("Setting the One Pair");
+                // console.log(temp);
+                player1.highhand = temp;
+                break;
+            case "High Card":
+                console.log("High Hand ---------- " + temp);
+                player1.highhand = temp;
+                break;
+        }        
+        }
+    
+
 }

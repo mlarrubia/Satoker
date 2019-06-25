@@ -4,6 +4,7 @@ class Player{
         this.hole = [];
         // Crpto to be implemented
         this.money = 0;
+        this.highhand = [];
     }
 
     newHand(){
