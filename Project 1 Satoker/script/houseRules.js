@@ -1,7 +1,5 @@
 class HouseRules{
-    constructor(){
-        this.name = "Matt";
-    }
+    
 
 
     royalFlush(player){
@@ -13,11 +11,96 @@ class HouseRules{
     }
 
     fourOfAKind(player){
+        let card1 = player.hole[0].value;
+        let card2 = player.hole[1].value;
+        let fourOfKindArray1 = [];
+        let fourOfKindArray2 = [];
+        fourOfKindArray1.unshift(player.hole[0]);
+        fourOfKindArray2.unshift(player.hole[1]);
+        let numOfKind1 = 1;
+        let numOfKind2 = 1;
 
+        if(card1 === card2){
+            console.log("Hole Pair-----" + card1 + " and " + card2);
+            threeOfKindArray1.push(card);
+            threeOfKindArray2.push(card);
+            numOfKind1++;
+            numOfKind2++;
+        }
+        currentGame.communityCards.forEach((card) =>{
+            if(card.value === card1){
+                console.log(card.value + " and " + card1);
+                fourOfKindArray1.push(card);
+                numOfKind1++;
+            }
+            if(card.value === card2){
+                console.log(card.value + " and " + card2);
+                fourOfKindArray2.push(card);
+                numOfKind2++;
+            }
+        });
+
+        if(numOfKind1 === 4 && numOfKind2 === 4){
+            if(card1 > card2){
+                return {
+                    title: "Four of a Kind",
+                    card: fourOfKindArray1
+                }
+            }    
+            else{
+                return {
+                    title: "Four of a Kind",
+                    card: fourOfKindArray2
+                }
+            }        
+
+        }
+        else if(numOfKind1 === 4){
+            console.log("returning card 1 four of a kind")
+            return {
+                title: "Four of a Kind",
+                card: fourOfKindArray1
+            }
+        }
+        else if(numOfKind2 === 4){
+            console.log("returning card 2 four of a kind")
+            return {
+                title: "Four of a Kind",
+                card: fourOfKindArray2
+            }
+        }
+        else{
+            console.log("Reterning undefined")
+            return undefined;
+        }
     }
 
+    // Works but needs to fix the data structure. RN it returns three of a kind an onepair titles
     fullHouse(player){
+        let isThreeOfAKind = false;
+        let isPair = false;
+        let fullHouseArray = [];
 
+        if(this.threeOfAKind(player) !== undefined){
+            fullHouseArray.push(this.threeOfAKind(player));
+            isThreeOfAKind = true;
+        }
+        if(this.onePair(player) !== undefined){
+            fullHouseArray.push(this.onePair(player));
+            isPair = true;
+        }
+
+        if(isPair === true && isThreeOfAKind === true){
+            return {
+                title: "Full House",
+                card: fullHouseArray
+            }
+        }
+        else{
+            return undefined;
+        }
+
+        
     }
 
     flush(player){
@@ -29,12 +112,19 @@ class HouseRules{
         let vitalik = 0;
         let flushSuit;
         let isFlushSuit = false;
+
+
+        // Push all hole cards for player into cardArray
         cardArray.push(player.hole[0]);
         cardArray.push(player.hole[1]);
+
+        // Push all community cards to cardArray
         currentGame.communityCards.forEach((card) =>{
-            cardArray.push(card);
+                cardArray.push(card);
         });
-        flushArray = cardArray.forEach((each) =>{
+        
+        // Counts up all the Suits
+        cardArray.forEach((each) =>{
             if(each.suit === "cz"){
                 return cz++;
             }
@@ -48,7 +138,9 @@ class HouseRules{
                 vitalik++;
             }
         });
-
+        
+            
+        // Checks cardArray for a Flush.
         if(cz >= 5){
             flushSuit = "cz";
             isFlushSuit = true;
@@ -66,28 +158,34 @@ class HouseRules{
             isFlushSuit = true;            
         }
 
-        // Use filter to grab the flush and return it with card objects :)
-        // returns the correct objects, does not save it to flushArray???
-        // It returns undefined but does not run the other functions like 3of a kind, etc...
+        // If there is a flush we return all card objects to FlushArray
         flushArray = cardArray.filter((each) =>{
             if(each.suit === flushSuit){
                 return each;
             }
-        })
-
-        if(isFlushSuit){
+        });
+        
+        if(isFlushSuit){;
             return {
                 title: "Flush",
                 card: flushArray
             }
         }
+        else{
+            return undefined;
+        }
 
     }
 
-    straight(player){
-        let card1 = player.hole[0].value;
-        let card2 = player.hole[1].value;
-    }
+
+    // straight(player){
+    //     let card1 = player.hole[0].value;
+    //     let card2 = player.hole[1].value;
+
+    //     currentGame.communityCards.forEach((card) =>{
+    //         cardArray.push(card);
+    // });
+    // }
 
     threeOfAKind(player){
         let card1 = player.hole[0].value;

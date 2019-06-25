@@ -17,6 +17,7 @@ console.log("WORKS :)");
     player1 = new Player();
     player2 = new Player();
     player3 = new Player();
+    // currentGame.players.push(new Player());
     currentGame.players.push(player1);
     currentGame.players.push(player2);
     currentGame.players.push(player3);
@@ -24,10 +25,12 @@ console.log("WORKS :)");
     // Wasnt loading so i had to set a timeout function
     setTimeout(function(){
         currentGame.generatePlayersHand();
-        currentGame.flop();
-        currentGame.theTurn();
-        currentGame.theRiver();
-
+        // currentGame.flop();
+        // currentGame.theTurn();
+        // currentGame.theRiver();
+        // currentGame.TESTFLUSH();
+        // currentGame.TESTFOUROFAKIND();
+        currentGame.TESTFULLHOUSE();
     }, 1000);
 
 

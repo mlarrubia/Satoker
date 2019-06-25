@@ -47,12 +47,69 @@ class Game{
 
     // Debating wheather to place this method in houserules or game but i think its part of the game that will check the houserules    
    
+    TESTFLUSH(){
+        // currentGame.communityCards[0] = (playingDeck.deckShuffled.shift());
+        // currentGame.communityCards[1] = (playingDeck.deckShuffled.shift());
+        // currentGame.communityCards[2] = (playingDeck.deckShuffled.shift());
+        // currentGame.communityCards[3] = (playingDeck.deckShuffled.shift());
+        // currentGame.communityCards[4] = (playingDeck.deckShuffled.shift());
+        // this.appendAll();
+
+        $('#cc1').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc2').append('<img src="assets/small/cz9.png" alt="">');
+        $('#cc3').append('<img src="assets/small/cz3.png" alt="">');
+        $('#cc4').append('<img src="assets/small/cz8.png" alt="">');
+        $('#cc5').append('<img src="assets/small/cza.png" alt="">');
+
+        currentGame.communityCards[0] = (cards[0]);
+        currentGame.communityCards[1] = (cards[7]);
+        currentGame.communityCards[2] = (cards[1]);
+        currentGame.communityCards[3] = (cards[6]);
+        currentGame.communityCards[4] = (cards[12]);
+
+
+    }
+    TESTFOUROFAKIND(){
+
+        $('#cc1').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc2').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc3').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc4').append('<img src="assets/small/cz8.png" alt="">');
+        $('#cc5').append('<img src="assets/small/cza.png" alt="">');
+
+        currentGame.communityCards[0] = (cards[0]);
+        currentGame.communityCards[1] = (cards[0]);
+        currentGame.communityCards[2] = (cards[0]);
+        currentGame.communityCards[3] = (cards[6]);
+        currentGame.communityCards[4] = (cards[12]);
+
+
+    }
+
+    TESTFULLHOUSE(){
+
+        $('#cc1').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc2').append('<img src="assets/small/cz2.png" alt="">');
+        $('#cc3').append('<img src="assets/small/cz8.png" alt="">');
+        $('#cc4').append('<img src="assets/small/cz8.png" alt="">');
+        $('#cc5').append('<img src="assets/small/cza.png" alt="">');
+
+        currentGame.communityCards[0] = (cards[0]);
+        currentGame.communityCards[1] = (cards[0]);
+        currentGame.communityCards[2] = (cards[6]);
+        currentGame.communityCards[3] = (cards[6]);
+        currentGame.communityCards[4] = (cards[12]);
+
+
+    }
+
+
 
     flop(){
         currentGame.communityCards[0] = (playingDeck.deckShuffled.shift());
         currentGame.communityCards[1] = (playingDeck.deckShuffled.shift());
         currentGame.communityCards[2] = (playingDeck.deckShuffled.shift());
-        this.appendAll()
+        this.appendAll();
     }
         // Dont forget to burn a card at the end, probably splice? .unshift
     
@@ -95,57 +152,74 @@ class Game{
         let temp = undefined;
         
         if(temp === undefined){
+            console.log("Full House...");
+            temp = rules.fullHouse(player1);
+            console.log(temp);
+        }
+        if(temp === undefined){
+            console.log("Four of a Kind...");
+            temp = rules.fourOfAKind(player1);
+            console.log(temp);
+        }
+        if(temp === undefined){
             console.log("Flush...");
             temp = rules.flush(player1);
+            console.log(temp);
         }
-        console.log(temp);
         // if(temp === undefined){
-        //     console.log("Straight...");
-        //     temp = rules.threeOfAKind(player1);
-        // }
-        // console.log(temp);
+        // //     console.log("Straight...");
+        // //     temp = rules.threeOfAKind(player1);
+        // // console.log(temp);
+        // // }
         if(temp === undefined){
             console.log("Three of a Kind...");
-            temp = rules.straight(player1);
+            temp = rules.threeOfAKind(player1);
+            console.log(temp);
         }
-        console.log(temp);
         if(temp === undefined){
             console.log("Two Pairs...");
             temp = rules.twoPairs(player1);
+            console.log(temp);
         }
-        console.log(temp);
         if(temp === undefined){
             console.log("One Pair...")
             temp = rules.onePair(player1);    
+            console.log(temp);
         }
-        console.log(temp);
         if(temp === undefined){
             console.log("High Card");
             temp = rules.highCard(player1);
+            console.log(temp);
         }
-        console.log(temp);
         switch(temp.title){
+            case "Full House":
+                console.log("Setting the Full House");
+                player1.highhand = temp;
+                break;
+            case "Four of a Kind":
+                console.log("Setting the Four of a Kind");
+                player1.highhand = temp;
+                break;
+            case "Flush":
+                console.log("Setting the Flush");
+                player1.highhand = temp;
+                break;
             case "Three of a Kind":
                 console.log("Setting the Three of a Kind");
-                console.log(temp);
                 player1.highhand = temp;
                 break;
             case "Two Pairs":
                 console.log("Setting the Two Pairs");
-                // console.log(temp);
                 player1.highhand = temp;
                 break;
             case "One Pair":
                 console.log("Setting the One Pair");
-                // console.log(temp);
                 player1.highhand = temp;
                 break;
             case "High Card":
-                console.log("High Hand ---------- " + temp);
+                console.log("High Hand");
                 player1.highhand = temp;
                 break;
         }        
-        }
-    
-
+    }
 }
