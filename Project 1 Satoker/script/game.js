@@ -95,6 +95,11 @@ class Game{
         let temp = undefined;
         
         if(temp === undefined){
+            console.log("Three of a Kind...");
+            temp = rules.threeOfAKind(player1);
+        }
+        console.log(temp);
+        if(temp === undefined){
             console.log("Two Pairs...");
             temp = rules.twoPairs(player1);
         }
@@ -110,6 +115,11 @@ class Game{
         }
         console.log(temp);
         switch(temp.title){
+            case "Three of a Kind":
+                console.log("Setting the Three of a Kind");
+                console.log(temp);
+                player1.highhand = temp;
+                break;
             case "Two Pairs":
                 console.log("Setting the Two Pairs");
                 // console.log(temp);

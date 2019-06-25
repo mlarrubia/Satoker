@@ -28,8 +28,72 @@ class HouseRules{
 
     }
 
-    threeOfAKind(){
+    threeOfAKind(player){
+        let card1 = player.hole[0].value;
+        let card2 = player.hole[1].value;
+        let threeOfKindArray1 = [];
+        let threeOfKindArray2 = [];
+        threeOfKindArray1.unshift(player.hole[0]);
+        threeOfKindArray2.unshift(player.hole[1]);
+        let numOfKind1 = 1;
+        let numOfKind2 = 1;
 
+        if(card1 === card2){
+            console.log("Hole Pair-----" + card1 + " and " + card2);
+            threeOfKindArray1.push(card);
+            threeOfKindArray2.push(card);
+            numOfKind1++;
+            numOfKind2++;
+        }
+        currentGame.communityCards.forEach((card) =>{
+            if(card.value === card1){
+                console.log(card.value + " and " + card1);
+                threeOfKindArray1.push(card);
+                numOfKind1++;
+            }
+            if(card.value === card2){
+                console.log(card.value + " and " + card2);
+                threeOfKindArray2.push(card);
+                numOfKind2++;
+            }
+        });
+
+        if(numOfKind1 === 3 && numOfKind2 === 3){
+            if(card1 > card2){
+                return {
+                    title: "Three of a Kind",
+                    card: threeOfKindArray1
+                }
+            }    
+            else{
+                return {
+                    title: "Three of a Kind",
+                    card: threeOfKindArray2
+                }
+            }        
+
+        }
+        else if(numOfKind1 === 3){
+            console.log("returning card 1 three of a kind")
+            return {
+                title: "Three of a Kind",
+                card: threeOfKindArray1
+            }
+        }
+        else if(numOfKind2 === 3){
+            console.log("returning card 2 three of a kind")
+            return {
+                title: "Three of a Kind",
+                card: threeOfKindArray2
+            }
+        }
+        else{
+            console.log("Reterning undefined")
+            return undefined;
+        }
+
+
+        
     }
 
     twoPairs(player){
