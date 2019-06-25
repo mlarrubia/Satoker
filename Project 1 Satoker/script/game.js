@@ -95,8 +95,18 @@ class Game{
         let temp = undefined;
         
         if(temp === undefined){
+            console.log("Flush...");
+            temp = rules.flush(player1);
+        }
+        console.log(temp);
+        // if(temp === undefined){
+        //     console.log("Straight...");
+        //     temp = rules.threeOfAKind(player1);
+        // }
+        // console.log(temp);
+        if(temp === undefined){
             console.log("Three of a Kind...");
-            temp = rules.threeOfAKind(player1);
+            temp = rules.straight(player1);
         }
         console.log(temp);
         if(temp === undefined){

@@ -4,28 +4,89 @@ class HouseRules{
     }
 
 
-    royalFlush(){
-        return true;
-    }
-
-    straightFlush(){
+    royalFlush(player){
 
     }
 
-    fourOfAKind(){
+    straightFlush(player){
 
     }
 
-    fullHouse(){
+    fourOfAKind(player){
 
     }
 
-    flush(){
+    fullHouse(player){
 
     }
 
-    straight(){
+    flush(player){
+        let flushArray = [];
+        let cardArray = [];
+        let cz = 0;
+        let sun = 0;
+        let mcafee = 0;
+        let vitalik = 0;
+        let flushSuit;
+        let isFlushSuit = false;
+        cardArray.push(player.hole[0]);
+        cardArray.push(player.hole[1]);
+        currentGame.communityCards.forEach((card) =>{
+            cardArray.push(card);
+        });
+        flushArray = cardArray.forEach((each) =>{
+            if(each.suit === "cz"){
+                return cz++;
+            }
+            else if(each.suit === "sun"){
+                sun++;
+            }
+            else if(each.suit === "mcafee"){
+                mcafee++;
+            }
+            else if(each.suit === "vitalik"){
+                vitalik++;
+            }
+        });
 
+        if(cz >= 5){
+            flushSuit = "cz";
+            isFlushSuit = true;
+        }
+        else if(sun >= 5){            
+            flushSuit = "sun";
+            isFlushSuit = true;
+        }
+        else if(mcafee >= 5){
+            flushSuit = "mcafee";
+            isFlushSuit = true;            
+        }
+        else if(vitalik >= 5){
+            flushSuit = "vitalik";
+            isFlushSuit = true;            
+        }
+
+        // Use filter to grab the flush and return it with card objects :)
+        // returns the correct objects, does not save it to flushArray???
+        // It returns undefined but does not run the other functions like 3of a kind, etc...
+        flushArray = cardArray.filter((each) =>{
+            if(each.suit === flushSuit){
+                return each;
+            }
+        })
+
+        if(isFlushSuit){
+            return {
+                title: "Flush",
+                card: flushArray
+            }
+        }
+
+    }
+
+    straight(player){
+        let card1 = player.hole[0].value;
+        let card2 = player.hole[1].value;
     }
 
     threeOfAKind(player){
@@ -96,6 +157,7 @@ class HouseRules{
         
     }
 
+    // Glitchy when you have a hole card with 2 community cards the same. Counts as if its 2 different pairs
     twoPairs(player){
         let card1 = player.hole[0].value;
         let card2 = player.hole[1].value;
