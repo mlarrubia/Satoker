@@ -47,7 +47,10 @@
                             <div id="inputPlayer" class="playerName">John Mcafee</div>
                             <div id="inputAmount" class="holdings">$1000</div>
                         </div>
-                        <div class="playerHand" id="p1"></div>
+                        <div class="playerHand" id="p1">
+                            <div class="cardbackground" id="p1c1"></div>
+                            <div class="cardbackground" id="p1c2"></div>                            
+                        </div>
                         <div class="betAmount">10</div>
                     </div>
                     <div class="playerProfile">
@@ -68,27 +71,30 @@
                     </div>  
                 </div>
               <div class="middlerow">
-                <div>
-
+                <div class="middleContainer">
+                    <div id="potinfo">
+                        <div id="potTitle">Pot Size</div>
+                        <div id="potsize">$0.00</div>
+                    </div>
+                    <div id="communityCards">
+                        <div class = 'flop-row'>
+                            <span class="communityCardSize flop cardbackground" id="cc1"><img src="" alt=""></span>
+                            <span class="communityCardSize flop cardbackground" id="cc2"><img src="" alt=""></span>
+                            <span class="communityCardSize flop cardbackground" id="cc3"><img src="" alt=""></span>
+                            <span class="communityCardSize cardbackground" id="cc4"><img src="" alt=""></span>
+                            <span class="communityCardSize cardbackground" id="cc5"><img src="" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="flex-end">  
+                        <div id="dealButton" class="commandButton">Deal</div>     
+                    </div >  
                 </div>
-                <div id="communityCards">
-                  <div class = 'flop-row'>
-                      <span class="communityCardSize flop" id="cc1"><img src="" alt=""></span>
-                      <span class="communityCardSize flop" id="cc2"><img src="" alt=""></span>
-                      <span class="communityCardSize flop" id="cc3"><img src="" alt=""></span>
-                      <span class="communityCardSize" id="cc4"><img src="" alt=""></span>
-                      <span class="communityCardSize" id="cc5"><img src="" alt=""></span>
-                  </div>
-                </div>  
-                  <div id="dealButton" class="commandButton">Deal</div>                  
-              </div>
                 <div id="commandCenter">
-                    <div class="commandButton">Fold</div>
-                    <div class="commandButton">Check</div>
-                    <div class="commandButton">Bet</div>
-                    <div class="commandButton">All in</div>
-                </div>
-            </div>  
+                <div class="commandButton">Fold</div>
+                <div class="commandButton">Check</div>
+                <div class="commandButton">Bet</div>
+                <div class="commandButton">All in</div>
+            </div>
         </div>
         </div>
     </body>

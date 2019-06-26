@@ -5,6 +5,7 @@ let currentGame;
 let rules;
 let playerName = '';
 let playerMoney = 0;
+let dealButtonVariable = 0;
 currentGame = new Game();
 playingDeck = new Deck();   
 rules = new HouseRules();   
@@ -25,15 +26,13 @@ $(document ).ready(function() {
     player1.name = $('#username').val();
     player1.money = $('#money').val();
     $('#inputPlayer').text(player1.name);
-    $('#inputAmount').text(player1.money);
+    $('#inputAmount').text("$" + player1.money);
     console.log("MONEY---" + playerMoney)
     console.log("NAME---" + playerName);
     $('#startContainer').toggle();
     $('#gameContainer').toggle();
+
   });
-  
-
-
 
 
 
@@ -43,16 +42,48 @@ $(document ).ready(function() {
     currentGame.players.push(player3);
     
     // Wasnt loading so i had to set a timeout function
-    setTimeout(function(){
+    $('#dealButton').click(function(){
+      console.log("Deal Variable ------ " + dealButtonVariable);
+      if(dealButtonVariable === 0){
         currentGame.generatePlayersHand();
-        currentGame.flop();
-        currentGame.theTurn();
-        currentGame.theRiver();
+        dealButtonVariable++;
         currentGame.checkHand();
+        console.log("Deal Variable ------ " + dealButtonVariable);
+      }
+      else if(dealButtonVariable === 1){
+        currentGame.flop();
+        dealButtonVariable++;
+        currentGame.checkHand();
+        console.log("Deal Variable ------ " + dealButtonVariable);
+      }
+      else if(dealButtonVariable === 2){
+        currentGame.theTurn();
+        dealButtonVariable++;
+        currentGame.checkHand();
+        console.log("Deal Variable ------ " + dealButtonVariable);
+      }
+      else if(dealButtonVariable === 3){
+        console.log("Test Show Down Button");
+        currentGame.theRiver();
+        dealButtonVariable++;
+        currentGame.checkHand();
+        $('#dealButton').html("ShowDown");
+        console.log("Deal Variable ------ " + dealButtonVariable);
+      }
+      else if(dealButtonVariable === 4){
+        currentGame.theShowDown();
+        dealButtonVariable++;       
+        console.log("Deal Variable ------ " + dealButtonVariable);      
+        $('.flex-end > .commandButton').attr("class", "commandButtonGreen");
+        $('#dealButton').html("Play Again");
+        console.log("Deal Variable ------ " + dealButtonVariable);        
+      }
+      
+    })
         // currentGame.TESTFLUSH();
         // currentGame.TESTFOUROFAKIND();
         // currentGame.TESTFULLHOUSE();
-    }, 1000);
+    
     
     
     console.log(">>>>>>>>>>>>>>>>>>>>>>>> ", playerName)

@@ -127,22 +127,71 @@ body{
 }
 
 .middlerow{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middleContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#potinfo{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 202px;
+  width: 250px;
+  background-color: red;
+  border: 3px solid #283966;
+}
+
+#potTitle{
+  height: 50px;
+  background-color: blue;
+}
+
+#potsize{
+
+}
+
+.cardbackground{
+    height: 150px;
+    width: 100px;
+    background-color: yellow;
+    border: 3px solid black;
 }
 
 #communityCards{
     /* Why do i have to use margin auto? Cant flex box take care of this for me? */
     padding-top: 75px;
+    width: 740px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .communityCardSize{}
 
 
+.flex-end{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
 #dealButton{
-    width: auto;
+    
     height: 30px;
+}
+
+#resetButton{
+  height: 30px;
 }
 
 
@@ -150,7 +199,7 @@ body{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 200px;
+    height: 300px;
 }
 
 .playerHeader{
@@ -168,6 +217,8 @@ body{
 
 .playerHand{
     height: 150px;
+    display: flex;
+    justify-content: center;
   }
   
   .playerHand > img{
@@ -190,11 +241,11 @@ body{
 
 
   #commandCenter{
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      height: 50px;
-      padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    padding-top: 30px;
   }
 
   .commandButton{
@@ -214,6 +265,24 @@ body{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
   }
+
+  .commandButtonGreen{
+    box-shadow: 0px 0px 0px 2px #a2f29f;
+    background:linear-gradient(to bottom, #78c27e 5%, #479e56 100%);
+    background-color:#78c27c;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    border:1px solid #56964e;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    padding:12px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #346628;
+    }
 
 
 

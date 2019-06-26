@@ -23,7 +23,7 @@ class Game{
         // Player 1
         player1.hole[0] = (playingDeck.deckShuffled.shift());
         player1.hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p1').append('<img src="' + player1.hole[0].image + '" alt="">');
+        $('#p1').html('<img src="' + player1.hole[0].image + '" alt="">');
         $('#p1').append('<img src="' + player1.hole[1].image + '" alt="">');
 
         // Player 2
@@ -133,7 +133,7 @@ class Game{
     }
 
     theShowDown(){
-        // Players reveal cards
+        console.log("The Showdownnn!");
     }
 
     addToPot(){
