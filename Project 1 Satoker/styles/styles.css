@@ -1,25 +1,96 @@
 
 body{    
     margin: 0;
-    width: 0;
-    background-image: url('../images/background.jpg');  
+    padding: 0;
 }
 
-/* ======================================    WELCOME PAGE      ============================================== */
-
-.welcomeContainer{
-    background-color: red;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
+/* ======================================    Start PAGE      ============================================== */
 
 
 
-
+#startContainer {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/startbg.jpg');  
+    background-size: cover;
+    background-repeat: no-repeat;   
+  }
+  
+  .form-container {
+    display: block;
+    margin: 200px auto 0 auto;
+    width: 400px;
+    perspective: 1000;
+  }
+  
+  .login-form {
+    background: rgba(244,146,0, 0.1);
+    border: 4px solid #facb7e;
+    border-radius: 8px;
+  }
+  
+  .title {
+    background: rgba(255, 155, 4, 0.19);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    font-size: 2em;
+    padding: 10px 10px 10px 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .form-input {
+    padding: 5px;
+    width: 300px;
+    height: 20px;
+    border: 4px solid rgba(255, 187, 0, 0.329);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    background-color: rgba(255, 153, 0, 0.589);
+  }
+  
+  textarea:focus, input:focus, button:focus {
+      outline: 0;
+  }
+ .tooltip {
+    width: 35%;
+    background: rgba(6, 41, 61, 1);
+    font-size: 0.8em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    margin-left: 10px;
+    padding: 7px;
+    border-radius: 5px;
+  } */
+   
+  .form-group {
+    padding: 10px 10px 10px 20px;
+    width: 300px;
+  }
+  
+  .login-button {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    
+   
+    border: 4px solid rgba(255, 187, 0, 0.329);
+    border-radius: 8px;
+    background-size: 500% 100%;
+    background: rgba(244,146,0, 0.2);
+    box-shadow: inset 0 0 0 0 rgba(20, 196, 148, 1);
+      -webkit-transition: all ease 0.3s;
+      -moz-transition: all ease 0.3s;
+      transition: all ease 0.3s;
+    
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
 
 
 
@@ -28,7 +99,7 @@ body{
 
 
 
-.gameContainer{
+#gameContainer{
     background-image: url('../images/background.jpg');  
 }
 
@@ -44,7 +115,7 @@ body{
     margin: 50px;   
 }
 
-.title{
+.gameTitle{
     color: white;
     font-size: 6em;
     text-align: center;
@@ -134,24 +205,6 @@ body{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -7,15 +7,16 @@ let playerName = '';
 let playerMoney = 0;
 
 
+$(document ).ready(function() { 
+  console.log("READY");
 
+  $('#gameContainer').toggle();
 
-$('.login-button').click(function (event) {
-
-    event.preventDefault();
-    playerMoney = $('#money').val();
-    playerName = $('#username').val();
-    
+  $( "#goodluck" ).click(function() {
+    $('#startContainer').toggle();
+    $('#gameContainer').toggle();
   });
+
 
 
 
@@ -65,3 +66,9 @@ $('.login-button').click(function (event) {
 
 //Showdown
 
+
+
+
+
+
+});
