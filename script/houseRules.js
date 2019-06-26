@@ -20,8 +20,8 @@ class HouseRules{
 
         if(card1 === card2){
             // console.log("Hole Pair-----" + card1 + " and " + card2);
-            fourOfKindArray1.push(card);
-            fourOfKindArray2.push(card);
+            fourOfKindArray1.push(player.hole[0]);
+            fourOfKindArray2.push(player.hole[1]);
             numOfKind1++;
             numOfKind2++;
         }

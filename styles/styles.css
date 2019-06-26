@@ -9,16 +9,16 @@ body{
 
 
 #startContainer {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-image: url('../images/startbg.jpg');  
     background-size: cover;
     background-repeat: no-repeat;   
   }
   
   .form-container {
+    padding: 35% 40%;
     display: block;
-    margin: 200px auto 0 auto;
     width: 400px;
     perspective: 1000;
   }

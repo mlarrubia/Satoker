@@ -20,44 +20,29 @@ class Game{
         // currentGame = new Game();
         playingDeck = new Deck();   
         rules = new HouseRules();           
-        this.emptyHands();
+        // this.emptyHands();
         this.shuffleDeck();
 
         // currentGame.players.push(new Player());
        
-        let randName1 = opponentsArray.splice(Math.floor(Math.random() * opponentsArray.length), 1);
-        let randName2 = opponentsArray.splice(Math.floor(Math.random() * opponentsArray.length), 1);
-        let randmoney1 = (Math.floor(Math.random() * 2000) + 500)
-        let randmoney2 = (Math.floor(Math.random() * 2000) + 500)
-        console.log("MONEY---------------- " + money);
-        currentGame.players.push(new Player(name, money));
-        currentGame.players.push(new Player(randName1, randmoney1));
-        currentGame.players.push(new Player(randName2, randmoney2));
-
+ 
         
-        // Player 1
-        currentGame.players[0].hole[0] = (playingDeck.deckShuffled.shift());
-        currentGame.players[0].hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p1').html('<img src="' + currentGame.players[0].hole[0].image + '" alt="">');
-        $('#p1').append('<img src="' + currentGame.players[0].hole[1].image + '" alt="">');
+        
 
-        // Player 2
-        currentGame.players[1].hole[0] = (playingDeck.deckShuffled.shift());
-        currentGame.players[1].hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p2').append('<img src="assets/small/back.png" alt="">');
-        $('#p2').append('<img src="assets/small/back.png" alt="">');
-
-        // Player 3
-        currentGame.players[2].hole[0] = (playingDeck.deckShuffled.shift());
-        currentGame.players[2].hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p3').append('<img src="assets/small/back.png" alt="">');
-        $('#p3').append('<img src="assets/small/back.png" alt="">');
     }
 
     emptyHands(){
         $('#p1').empty();
         $('#p2').empty();
         $('#p3').empty();
+        $('#communityCards').empty();
+        this.players[0].hole = [];
+        this.players[0].highHand = [];
+        this.players[1].hole = [];
+        this.players[1].highHand = [];
+        this.players[2].hole = [];
+        this.players[2].highHand = [];
+        this.communityCards = [];
     }
 
     // Debating wheather to place this method in houserules or game but i think its part of the game that will check the houserules    
