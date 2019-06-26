@@ -5,7 +5,7 @@ class Player{
         // Crpto to be implemented
         this.money = 0;
         this.highhand = [];
-        this.name = playerName
+        this.name = "";
     }
 
     newHand(){
