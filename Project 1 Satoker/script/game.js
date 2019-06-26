@@ -29,14 +29,14 @@ class Game{
         // Player 2
         player2.hole[0] = (playingDeck.deckShuffled.shift());
         player2.hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p2').append('<img src="' + player2.hole[0].image + '" alt="">');
-        $('#p2').append('<img src="' + player2.hole[1].image + '" alt="">');
+        $('#p2').append('<img src="assets/small/back.png" alt="">');
+        $('#p2').append('<img src="assets/small/back.png" alt="">');
 
         // Player 3
         player3.hole[0] = (playingDeck.deckShuffled.shift());
         player3.hole[1] = (playingDeck.deckShuffled.shift());
-        $('#p3').append('<img src="' + player3.hole[0].image + '" alt="">');
-        $('#p3').append('<img src="' + player3.hole[1].image + '" alt="">');
+        $('#p3').append('<img src="assets/small/back.png" alt="">');
+        $('#p3').append('<img src="assets/small/back.png" alt="">');
     }
 
     emptyHands(){

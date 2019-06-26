@@ -1,7 +1,5 @@
 class HouseRules{
     
-
-
     royalFlush(player){
 
     }
@@ -21,7 +19,7 @@ class HouseRules{
         let numOfKind2 = 1;
 
         if(card1 === card2){
-            console.log("Hole Pair-----" + card1 + " and " + card2);
+            // console.log("Hole Pair-----" + card1 + " and " + card2);
             threeOfKindArray1.push(card);
             threeOfKindArray2.push(card);
             numOfKind1++;
@@ -29,12 +27,12 @@ class HouseRules{
         }
         currentGame.communityCards.forEach((card) =>{
             if(card.value === card1){
-                console.log(card.value + " and " + card1);
+                // console.log(card.value + " and " + card1);
                 fourOfKindArray1.push(card);
                 numOfKind1++;
             }
             if(card.value === card2){
-                console.log(card.value + " and " + card2);
+                // console.log(card.value + " and " + card2);
                 fourOfKindArray2.push(card);
                 numOfKind2++;
             }
@@ -56,21 +54,21 @@ class HouseRules{
 
         }
         else if(numOfKind1 === 4){
-            console.log("returning card 1 four of a kind")
+            // console.log("returning card 1 four of a kind")
             return {
                 title: "Four of a Kind",
                 card: fourOfKindArray1
             }
         }
         else if(numOfKind2 === 4){
-            console.log("returning card 2 four of a kind")
+            // console.log("returning card 2 four of a kind")
             return {
                 title: "Four of a Kind",
                 card: fourOfKindArray2
             }
         }
         else{
-            console.log("Reterning undefined")
+            // console.log("Reterning undefined")
             return undefined;
         }
     }
@@ -198,7 +196,7 @@ class HouseRules{
         let numOfKind2 = 1;
 
         if(card1 === card2){
-            console.log("Hole Pair-----" + card1 + " and " + card2);
+            // console.log("Hole Pair-----" + card1 + " and " + card2);
             threeOfKindArray1.push(card);
             threeOfKindArray2.push(card);
             numOfKind1++;
@@ -206,12 +204,12 @@ class HouseRules{
         }
         currentGame.communityCards.forEach((card) =>{
             if(card.value === card1){
-                console.log(card.value + " and " + card1);
+                // console.log(card.value + " and " + card1);
                 threeOfKindArray1.push(card);
                 numOfKind1++;
             }
             if(card.value === card2){
-                console.log(card.value + " and " + card2);
+                // console.log(card.value + " and " + card2);
                 threeOfKindArray2.push(card);
                 numOfKind2++;
             }
@@ -233,21 +231,21 @@ class HouseRules{
 
         }
         else if(numOfKind1 === 3){
-            console.log("returning card 1 three of a kind")
+            // console.log("returning card 1 three of a kind")
             return {
                 title: "Three of a Kind",
                 card: threeOfKindArray1
             }
         }
         else if(numOfKind2 === 3){
-            console.log("returning card 2 three of a kind")
+            // console.log("returning card 2 three of a kind")
             return {
                 title: "Three of a Kind",
                 card: threeOfKindArray2
             }
         }
         else{
-            console.log("Reterning undefined")
+            // console.log("Reterning undefined")
             return undefined;
         }
 
@@ -273,34 +271,34 @@ class HouseRules{
 
         for(let i = 0; i < currentGame.communityCards.length; i++){
             if(card1 === currentGame.communityCards[i].value){
-                console.log("Checking 1")                 
-                    console.log("==================" + card1 + "-----------" + currentGame.communityCards[i].value);
+                // console.log("Checking 1")                 
+                    // console.log("==================" + card1 + "-----------" + currentGame.communityCards[i].value);
                     highestTwoPair.push(player.hole[0]);
                     highestTwoPair.push(currentGame.communityCards[i]);  
                     if(card1 < currentLowestValue){
-                        console.log("Checking lowest " + card1 + " -------- " + currentLowestValue);
+                        // console.log("Checking lowest " + card1 + " -------- " + currentLowestValue);
                         currentLowestValue = card1;
                     }             
                     numOfPairs++;     
-                    console.log(highestTwoPair);              
+                    // console.log(highestTwoPair);              
             }
             if(card2 === currentGame.communityCards[i].value){
-                console.log("Checking 2");                
-                    console.log("==================" + card2 + "-----------" + currentGame.communityCards[i].value);
+                // console.log("Checking 2");                
+                    // console.log("==================" + card2 + "-----------" + currentGame.communityCards[i].value);
                     highestTwoPair.push(player.hole[1]);
                     highestTwoPair.push(currentGame.communityCards[i]);  
                     if(card2 < currentLowestValue){
-                        console.log("Checking lowest " + card2 + " -------- " + currentLowestValue);
+                        // console.log("Checking lowest " + card2 + " -------- " + currentLowestValue);
                         currentLowestValue = card2;
                     }         
-                    console.log(highestTwoPair);    
+                    // console.log(highestTwoPair);    
                     numOfPairs++;     
                 
             }
 
         }
                 if(numOfPairs == 2){
-                    console.log("Two Pairs return object :)");
+                    // console.log("Two Pairs return object :)");
                     return {
                         title: "Two Pairs",
                         card: highestTwoPair
@@ -309,7 +307,7 @@ class HouseRules{
                 }
                 else{
                     // will return undefined
-                    console.log("Two Pairs return undefined: numOfPairs " + numOfPairs + "-------- Objects: " + highestTwoPair);
+                    // console.log("Two Pairs return undefined: numOfPairs " + numOfPairs + "-------- Objects: " + highestTwoPair);
                     return undefined;
                 }
     }
@@ -321,7 +319,7 @@ class HouseRules{
         let currentHighestValue = 0;
         let highestPair = [];
         if(card1 === card2){
-            console.log("==================" + card1 + "-----------" + card2);
+            // console.log("==================" + card1 + "-----------" + card2);
            highestPair.push(player.hole[0]);
            highestPair.push(player.hole[1]);
 
@@ -329,9 +327,9 @@ class HouseRules{
 
         for(let i = 0; i < currentGame.communityCards.length; i++){
             if(card1 === currentGame.communityCards[i].value){
-                console.log("Checking 1");
+                // console.log("Checking 1");
                 if(card1 > currentHighestValue){
-                    console.log("==================" + card1 + "-----------" + currentGame.communityCards[i].value);
+                    // console.log("==================" + card1 + "-----------" + currentGame.communityCards[i].value);
                     currentHighestValue = card1;
                     highestPair = [];
                     highestPair.push(player.hole[0]);
@@ -339,9 +337,9 @@ class HouseRules{
                 }
             }
             if(card2 === currentGame.communityCards[i].value){
-                console.log("Checking 2");
+                // console.log("Checking 2");
                 if(card2 > currentHighestValue){
-                    console.log("==================" + card2 + "-----------" +  currentGame.communityCards[i].value);
+                    // console.log("==================" + card2 + "-----------" +  currentGame.communityCards[i].value);
                     currentHighestValue = card2;
                     highestPair = [];
                     highestPair.push(player.hole[1]);
