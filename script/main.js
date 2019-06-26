@@ -6,6 +6,7 @@ let rules;
 let playerName = '';
 let playerMoney = 0;
 let dealButtonVariable = 0;
+let opponentsArray = ["John Mcafee", "CZ", "Vitalik Buterin", "Justin Sun",];
 currentGame = new Game();
 playingDeck = new Deck();   
 rules = new HouseRules();   
@@ -23,8 +24,9 @@ $(document ).ready(function() {
 
   $( "#goodluck" ).click(function(e) {
     e.preventDefault();
-    player1.name = $('#username').val();
-    player1.money = $('#money').val();
+    let playername = $('#username').val();
+    let playermoney= $('#money').val();
+    currentGame.generatePlayersHand(playername, playerMoney);
     $('#inputPlayer').text(player1.name);
     $('#inputAmount').text("$" + player1.money);
     console.log("MONEY---" + playerMoney)
@@ -36,10 +38,7 @@ $(document ).ready(function() {
 
 
 
-    // currentGame.players.push(new Player());
-    currentGame.players.push(player1);
-    currentGame.players.push(player2);
-    currentGame.players.push(player3);
+
     
     // Wasnt loading so i had to set a timeout function
     $('#dealButton').click(function(){

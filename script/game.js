@@ -16,9 +16,22 @@ class Game{
     }
 
 
-    generatePlayersHand(){
+    generatePlayersHand(name, money){
+        currentGame = new Game();
+        playingDeck = new Deck();   
+        rules = new HouseRules();           
         this.emptyHands();
         this.shuffleDeck();
+
+        // currentGame.players.push(new Player());
+        let randName1 = opponentsArray[Math.floor(Math.random() * opponentsArray.length)];
+        let randName2 = opponentsArray[Math.floor(Math.random() * opponentsArray.length)];
+        let randmoney1 = (Math.floor(Math.random() * 2000) + 500)
+        let randmoney2 = (Math.floor(Math.random() * 2000) + 500)
+        currentGame.players.push(new Player(name, money));
+        currentGame.players.push(new Player(randName1, randmoney1));
+        currentGame.players.push(new Player(randName2, randmoney2));
+
         
         // Player 1
         player1.hole[0] = (playingDeck.deckShuffled.shift());

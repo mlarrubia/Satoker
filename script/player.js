@@ -1,11 +1,11 @@
 class Player{
-    constructor(playerName){
+    constructor(playerName, money){
         // Object of 2 cards, your hand
         this.hole = [];
         // Crpto to be implemented
-        this.money = 0;
+        this.money = money
         this.highhand = [];
-        this.name = "";
+        this.name = playerName;
     }
 
     newHand(){
