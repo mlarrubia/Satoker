@@ -3,7 +3,7 @@ class Player{
         // Object of 2 cards, your hand
         this.hole = [];
         // Crpto to be implemented
-        this.money = money
+        this.money = money;
         this.highhand = [];
         this.name = playerName;
     }

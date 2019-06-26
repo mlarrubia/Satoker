@@ -1,6 +1,7 @@
 console.log("Main loaded");
+let playername; 
+let playermoney;
 let playingDeck;
-let player1;
 let currentGame;
 let rules;
 let playerName = '';
@@ -8,11 +9,9 @@ let playerMoney = 0;
 let dealButtonVariable = 0;
 let opponentsArray = ["John Mcafee", "CZ", "Vitalik Buterin", "Justin Sun",];
 currentGame = new Game();
-playingDeck = new Deck();   
-rules = new HouseRules();   
-player1 = new Player(playerName);
-player2 = new Player();
-player3 = new Player();
+// playingDeck = new Deck();   
+// rules = new HouseRules();   
+
 
 
 $(document ).ready(function() { 
@@ -24,13 +23,15 @@ $(document ).ready(function() {
 
   $( "#goodluck" ).click(function(e) {
     e.preventDefault();
-    let playername = $('#username').val();
-    let playermoney= $('#money').val();
+    playername = $('#username').val();
+    playermoney= $('#money').val();
     currentGame.generatePlayersHand(playername, playerMoney);
-    $('#inputPlayer').text(player1.name);
-    $('#inputAmount').text("$" + player1.money);
-    console.log("MONEY---" + playerMoney)
-    console.log("NAME---" + playerName);
+    $('#inputPlayer').text(playername);
+    $('#inputAmount').text("$" + playermoney);
+    $('#p2name').text(currentGame.players[1].name);
+    $('#p2money').text("$" + currentGame.players[1].money);
+    $('#p3name').text(currentGame.players[2].name);
+    $('#p3money').text("$" + currentGame.players[2].money);
     $('#startContainer').toggle();
     $('#gameContainer').toggle();
 
@@ -46,26 +47,34 @@ $(document ).ready(function() {
       if(dealButtonVariable === 0){
         currentGame.generatePlayersHand();
         dealButtonVariable++;
-        currentGame.checkHand();
+        for(let i = 0; i < currentGame.players.length; i++){
+          currentGame.checkHand(currentGame.players[i]);
+        }
         console.log("Deal Variable ------ " + dealButtonVariable);
       }
       else if(dealButtonVariable === 1){
         currentGame.flop();
         dealButtonVariable++;
-        currentGame.checkHand();
+        for(let i = 0; i < currentGame.players.length; i++){
+          currentGame.checkHand(currentGame.players[i]);
+        }
         console.log("Deal Variable ------ " + dealButtonVariable);
       }
       else if(dealButtonVariable === 2){
         currentGame.theTurn();
         dealButtonVariable++;
-        currentGame.checkHand();
+        for(let i = 0; i < currentGame.players.length; i++){
+          currentGame.checkHand(currentGame.players[i]);
+        }
         console.log("Deal Variable ------ " + dealButtonVariable);
       }
       else if(dealButtonVariable === 3){
         console.log("Test Show Down Button");
         currentGame.theRiver();
         dealButtonVariable++;
-        currentGame.checkHand();
+        for(let i = 0; i < currentGame.players.length; i++){
+          currentGame.checkHand(currentGame.players[i]);
+        }
         $('#dealButton').html("ShowDown");
         console.log("Deal Variable ------ " + dealButtonVariable);
       }
