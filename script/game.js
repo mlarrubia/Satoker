@@ -1,3 +1,4 @@
+
 class Game{
     constructor(){
         this.players = [];
@@ -24,18 +25,17 @@ class Game{
         this.shuffleDeck();
 
         // currentGame.players.push(new Player());
-       
- 
-        
-        
-
     }
 
     emptyHands(){
         $('#p1').empty();
         $('#p2').empty();
         $('#p3').empty();
-        $('#communityCards').empty();
+        $('#cc1 > img').prop('src', '');
+        $('#cc2 > img').prop('src', '');
+        $('#cc3 > img').prop('src', '');
+        $('#cc4 > img').prop('src', '');
+        $('#cc5 > img').prop('src', '');
         this.players[0].hole = [];
         this.players[0].highHand = [];
         this.players[1].hole = [];
@@ -126,6 +126,7 @@ class Game{
 
     appendAll(){
         currentGame.communityCards.forEach((oneCard, i) => {
+            console.log("--------------------------------- ", $(`#cc${i+1}`)[0].childNodes[0])
             $(`#cc${i+1}`)[0].childNodes[0].src = `${oneCard.image}`;
             // $(`#cc${i+1}`).append('<img src="' + oneCard.image + '" alt="">');
             // $(`#cc${i+1}`)[0].childNodes[0].removeAttr('src').replaceWith('<img src="' + oneCard.image + '" alt="">');

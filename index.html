@@ -23,16 +23,18 @@
         <div id="startContainer">
             <div class="form-container flip">
                 <form class="login-form">
-                <h3 class="title">Welcome to Satoker.</h3>
-                <div class="form-group">
-                    <input class="form-input" id="username" placeholder="Name" required="true"></input>                    
-                </div>
-                <div class="form-group" >
-                    <input class="form-input" id="money" placeholder="How much would you like to play with"></input>                    
-                </div>
-                <div class="form-group">
-                    <button id="goodluck" class="login-button">Good Luck</button>
-                </div>
+                    <h3 class="title">Welcome to Satoker.</h3>
+                    <div class="form-box">
+                        <div class="form-group">
+                            <input class="form-input" id="username" placeholder="Name" required="true"></input>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-input" id="money" placeholder="How much would you like to play with"></input>
+                        </div>
+                        <div class="form-group">
+                            <button id="goodluck" class="login-button">Good Luck</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -40,7 +42,6 @@
         <!-- cc === community card -->
         <div id="screen">
             <div id="board">
-                <div class="gameTitle">SATOKER</div>
                 <div id="players">
                     <div class="playerProfile">
                         <div class="playerHeader">
@@ -79,8 +80,12 @@
               <div class="middlerow">
                 <div class="middleContainer">
                     <div id="potinfo">
-                        <div id="potTitle">Pot Size</div>
-                        <div id="potsize">$0.00</div>
+                        <div id="potTitle">
+                            <div>Pot Size</div>
+                        </div>
+                        <div id="potsize">
+                            <div>$0.00</div>
+                        </div>
                     </div>
                     <div id="communityCards">
                         <div class = 'flop-row'>
@@ -100,6 +105,11 @@
                 <div class="commandButton">Check</div>
                 <div class="commandButton">Bet</div>
                 <div class="commandButton">All in</div>
+            </div>
+        </div>
+        <div id="bottomrow">
+            <div  id="info">
+
             </div>
         </div>
         </div>
